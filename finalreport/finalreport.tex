@@ -76,7 +76,7 @@
 
 \title{Flowering date prediction for bulbous perennials}
 
-\author{Dániel Nagy$^1$,\\Imre Jánosi$^2$}
+\author{Dániel Nagy$^1$,\\Imre M. Jánosi$^2$}
 \vspace{2.0cm}
 \date{%
     $^1$Institute for Physics, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/A. Budapest, Hungary\\%
@@ -102,9 +102,18 @@
 \end{abstract}
 
 \section*{Introduction}
+\par Many observations prove that plants have a complex sense of climate, and that many of them developed the ability
+to prevent premature flowering.
+In order to uncover the relationship between meteorological data and flowering time, a long-term data acquisition was needed.
+The data available to my project is a \texttt{csv} file that is containing the first flowering dates of 329 bulbous perennial plants 
+in the period 1968-2001. Further meteorological data is downloaded from the internet. The most significant meteorological parameter 
+is the temperature of the soil at a depth of around 10cm. The temperature data is shown on \ref{fig:tempdata}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/temp_plot.png}
+    \caption{The soil temperature at 10cm depth across 22 years, plotted yearly at a 1-hour resolution.
+    The x axis shows the hours before flowering date starting from 0.}
+    \label{fig:tempdata}
 \end{figure}
 
 \section*{The LSCD model}
@@ -209,6 +218,7 @@ $t_m$ is the time at dawn.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{images/LSTM_arch.png}
+    \caption{LSTM architecture for predicting flowering time from temperature measurement series.}
 \end{figure}
 
 \subsection*{Results of the neural network approach}
