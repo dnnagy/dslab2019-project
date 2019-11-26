@@ -74,9 +74,10 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue}
 
-\title{Statistical physics cheat sheet}
+\title{Flowering date prediction for bulbous perennials}
 
-\author{Dániel Nagy$^1$, Imre Jánosi$^2$}
+\author{Dániel Nagy$^1$,\\Imre Jánosi$^2$}
+\vspace{2.0cm}
 \date{%
     $^1$Institute for Physics, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/A. Budapest, Hungary\\%
     $^2$Department of Physics of Complex Systems, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/A. Budapest, Hungary\\[2ex]%
@@ -85,23 +86,75 @@
 
 \begin{document}
 \maketitle
-\vspace{0.5cm}
-\begin{figure}[h!]
+\vspace{2.5cm}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{images/elte.eps}
 \end{figure}
 \vspace{0.5cm}
 
+\newpage
 \begin{abstract}
-    Abstract sucks.
+    The goal of this project is to efficiently predict the first flowering date of bulbous perennials and to identify,
+    which meteorological parameters affect the flowering dates. The LSCD model is briefly presented, and the hyperparameters
+    of the simpler LSC model are fitted using Gaussian process optimization. A neural network approach for the
+    prediction of flowering dates is presented.
 \end{abstract}
 
-\newpage
-\begin{figure}[h!]
+\section*{Introduction}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/temp_plot.png}
+\end{figure}
+
+\section*{The LSCD model}
+
+\begin{equation}
+    \frac{\mathrm d\nu}{\mathrm d t} = p_{\nu}(L, S, C, D) - s_{\nu}\nu
+\end{equation}
+\begin{equation}
+    \frac{\mathrm dV}{\mathrm dt} = s_{\nu}\nu - d_VV
+\end{equation}
+$p_{\nu}(L, S, C, D)=L\cdot S\cdot C\cdot D$ is the productive transcription,
+$s_{\nu}$ is the splicing rate, and $d_V$ is the degradation rate of the spliced VIN3.
+
+\begin{equation}
+    \frac{\mathrm dL}{\mathrm dt} =
+    \begin{cases}
+    1-d_LL & T < T_L \\
+    -d_LL & T \geq T_L
+    \end{cases}
+\end{equation}
+
+\begin{equation}
+    C(T) =
+    \begin{cases}
+    p_{c1} & T \leq T_{c1} \\
+    p_{c1}-p_{c2}\frac{T-T_{c1}}{T_{c2}-T_{c1}} & T_{c1} < T < T_{c2} \\
+    p_{c2} & T \geq T_{c2}
+    \end{cases}
+\end{equation}
+
+\begin{equation}
+    S(T_m) = 
+    \begin{cases}
+    1, & T < T_S \\
+    S_1, & T \geq T_S
+    \end{cases}
+\end{equation}
+
+\begin{equation}
+    D(t) =  \left[p_D + \sin\left(2\pi\left(t - \frac{t_m-1}{24}\right)\right)\right]^2
+\end{equation}
+$T_m$ is the maximum temperature since the last resetting, which was chosen to occur each day at 4pm.
+$t_m$ is the time at dawn.
+
+\begin{figure}[H]
     \centering
     \begin{minipage}{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{./images/param_L.png}
+        \caption{$L$ intermediator for a }
     \end{minipage}
     \hfill
     \begin{minipage}{0.4\textwidth}
@@ -109,7 +162,7 @@
         \includegraphics[width=1.0\textwidth]{./images/param_S.png}
     \end{minipage}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{minipage}{0.4\textwidth}
         \centering
@@ -122,55 +175,47 @@
     \end{minipage}
 \end{figure}
 
-\newpage
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/temp_plot.png}
-\end{figure}
-
-\begin{figure}[h!]
+\subsection*{Results with the LSCD model}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/L_plot.png}
 \end{figure}
-
-\newpage
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/S_plot.png}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/C_plot.png}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/nu_plot.png}
 \end{figure}
 
-\feynmandiagram [horizontal=a to b]{
-    i1 -- [fermion] a -- [fermion] i2, a -- [photon] b,
-    f1 -- [fermion] b -- [fermion] f2,
-};
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/LSC_skopt_objective.png}
+\end{figure}
 
-\begin{equation}
-    \feynmandiagram [baseline=(d.base), horizontal=d to b] {
-        a -- [fermion] b -- [fermion] c,
-        b -- [boson] d [particle=\(\gamma\)], 
-    };
-    = i g_{e} \gamma^{\mu}
-\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/LSC_skopt_evals.png}
+\end{figure}
 
-\begin{equation}
-    \feynmandiagram [inline=(d.base), horizontal=d to b] {
-        a -- [fermion] b -- [fermion] c,
-        b -- [boson] d [particle=\(\gamma\)],
-    };
-    = i g_{e} \gamma^{\mu}
-\end{equation}
 
- % No invisible to keep the two photons together
- \feynmandiagram [small, horizontal=a to t1] {
-    a [particle=\(\pi^{0}\)] -- [scalar] t1 -- t2 -- t3 -- t1, t2 -- [photon] p1 [particle=\(\gamma\)],
-    t3 -- [photon] p2 [particle=\(\gamma\)],
-};
+\newpage
+\section*{Neural network approach}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{images/LSTM_arch.png}
+\end{figure}
+
+\subsection*{Results of the neural network approach}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/loss-6.png}
+\end{figure}
+
+
 \end{document}
