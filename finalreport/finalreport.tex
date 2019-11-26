@@ -18,6 +18,9 @@
 \usepackage{amssymb}
 \usepackage{xcolor}
 
+% feynman diagrams
+\usepackage{tikz-feynman}
+
 % using circled symbols
 \usepackage{tikz}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
@@ -75,8 +78,8 @@
 
 \author{Dániel Nagy$^1$, Imre Jánosi$^2$}
 \date{%
-    $^1$Institute for Physics, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/a. Budapest, Hungary\\%
-    $^2$Department of Physics of Complex Systems, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/a. Budapest, Hungary\\[2ex]%
+    $^1$Institute for Physics, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/A. Budapest, Hungary\\%
+    $^2$Department of Physics of Complex Systems, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/A. Budapest, Hungary\\[2ex]%
     \today
 }
 
@@ -144,4 +147,30 @@
     \includegraphics[width=0.75\textwidth]{images/nu_plot.png}
 \end{figure}
 
+\feynmandiagram [horizontal=a to b]{
+    i1 -- [fermion] a -- [fermion] i2, a -- [photon] b,
+    f1 -- [fermion] b -- [fermion] f2,
+};
+
+\begin{equation}
+    \feynmandiagram [baseline=(d.base), horizontal=d to b] {
+        a -- [fermion] b -- [fermion] c,
+        b -- [boson] d [particle=\(\gamma\)], 
+    };
+    = i g_{e} \gamma^{\mu}
+\end{equation}
+
+\begin{equation}
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+        a -- [fermion] b -- [fermion] c,
+        b -- [boson] d [particle=\(\gamma\)],
+    };
+    = i g_{e} \gamma^{\mu}
+\end{equation}
+
+ % No invisible to keep the two photons together
+ \feynmandiagram [small, horizontal=a to t1] {
+    a [particle=\(\pi^{0}\)] -- [scalar] t1 -- t2 -- t3 -- t1, t2 -- [photon] p1 [particle=\(\gamma\)],
+    t3 -- [photon] p2 [particle=\(\gamma\)],
+};
 \end{document}
