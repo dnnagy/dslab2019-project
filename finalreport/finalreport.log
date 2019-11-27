@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.30)  26 NOV 2019 23:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.30)  27 NOV 2019 07:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1015,89 +1015,89 @@ File: images/temp_plot.png Graphic file (type png)
  <use images/temp_plot.png>
 Package pdftex.def Info: images/temp_plot.png used on input line 113.
 (pdftex.def)             Requested size: 394.782pt x 169.1905pt.
- <./images/param_L.png, id=36, 436.63126pt x 336.25626pt>
+ [2 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/temp_plot.png>] <./images/param_L.png, id=61, 436.63126pt x 336.25626pt>
 File: ./images/param_L.png Graphic file (type png)
  <use ./images/param_L.png>
-Package pdftex.def Info: ./images/param_L.png used on input line 165.
+Package pdftex.def Info: ./images/param_L.png used on input line 177.
 (pdftex.def)             Requested size: 210.54718pt x 162.14514pt.
- <./images/param_S.png, id=37, 456.70625pt x 331.2375pt>
+ <./images/param_S.png, id=62, 456.70625pt x 331.2375pt>
 File: ./images/param_S.png Graphic file (type png)
  <use ./images/param_S.png>
-Package pdftex.def Info: ./images/param_S.png used on input line 171.
+Package pdftex.def Info: ./images/param_S.png used on input line 184.
 (pdftex.def)             Requested size: 210.54718pt x 152.70467pt.
- [2 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/temp_plot.png>] <./images/param_C.png, id=64, 476.78125pt x 340.27126pt>
+ <./images/param_C.png, id=63, 476.78125pt x 340.27126pt>
 File: ./images/param_C.png Graphic file (type png)
  <use ./images/param_C.png>
-Package pdftex.def Info: ./images/param_C.png used on input line 178.
+Package pdftex.def Info: ./images/param_C.png used on input line 193.
 (pdftex.def)             Requested size: 210.54718pt x 150.26498pt.
- <./images/param_D.png, id=65, 438.63875pt x 337.26pt>
+ <./images/param_D.png, id=64, 438.63875pt x 337.26pt>
 File: ./images/param_D.png Graphic file (type png)
  <use ./images/param_D.png>
-Package pdftex.def Info: ./images/param_D.png used on input line 183.
+Package pdftex.def Info: ./images/param_D.png used on input line 200.
 (pdftex.def)             Requested size: 210.54718pt x 161.88809pt.
- <images/L_plot.png, id=66, 1011.78pt x 433.62pt>
+ <images/L_plot.png, id=67, 1011.78pt x 433.62pt>
 File: images/L_plot.png Graphic file (type png)
  <use images/L_plot.png>
-Package pdftex.def Info: images/L_plot.png used on input line 190.
+Package pdftex.def Info: images/L_plot.png used on input line 210.
 (pdftex.def)             Requested size: 394.782pt x 169.1905pt.
- <images/S_plot.png, id=67, 1011.78pt x 433.62pt>
+ <images/S_plot.png, id=68, 1011.78pt x 433.62pt>
 File: images/S_plot.png Graphic file (type png)
  <use images/S_plot.png>
-Package pdftex.def Info: images/S_plot.png used on input line 194.
+Package pdftex.def Info: images/S_plot.png used on input line 215.
 (pdftex.def)             Requested size: 394.782pt x 169.1905pt.
- <images/C_plot.png, id=68, 1011.78pt x 433.62pt>
+ [3 <./images/param_L.png> <./images/param_S.png> <./images/param_C.png> <./images/param_D.png>] <images/C_plot.png, id=88, 1011.78pt x 433.62pt>
 File: images/C_plot.png Graphic file (type png)
  <use images/C_plot.png>
-Package pdftex.def Info: images/C_plot.png used on input line 198.
+Package pdftex.def Info: images/C_plot.png used on input line 220.
 (pdftex.def)             Requested size: 394.782pt x 169.1905pt.
- [3 <./images/param_L.png> <./images/param_S.png> <./images/param_C.png> <./images/param_D.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/L_plot.png>] <images/nu_plot.png, id=81, 1011.78pt x 433.62pt>
+ <images/nu_plot.png, id=89, 1011.78pt x 433.62pt>
 File: images/nu_plot.png Graphic file (type png)
  <use images/nu_plot.png>
-Package pdftex.def Info: images/nu_plot.png used on input line 202.
+Package pdftex.def Info: images/nu_plot.png used on input line 225.
 (pdftex.def)             Requested size: 394.782pt x 169.1905pt.
- <images/LSC_skopt_objective.png, id=82, 1445.4pt x 1445.4pt>
+ [4 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/L_plot.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/S_plot.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/C_plot.png>] <images/LSC_skopt_objective.png, id=102, 1445.4pt x 1445.4pt>
 File: images/LSC_skopt_objective.png Graphic file (type png)
  <use images/LSC_skopt_objective.png>
-Package pdftex.def Info: images/LSC_skopt_objective.png used on input line 207.
+Package pdftex.def Info: images/LSC_skopt_objective.png used on input line 253.
 (pdftex.def)             Requested size: 521.11513pt x 521.11554pt.
- [4 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/S_plot.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/C_plot.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/nu_plot.png>] <images/LSC_skopt_evals.png, id=90, 1445.4pt x 1445.4pt>
+ [5 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/nu_plot.png>] <images/LSC_skopt_evals.png, id=113, 1445.4pt x 1445.4pt>
 File: images/LSC_skopt_evals.png Graphic file (type png)
  <use images/LSC_skopt_evals.png>
-Package pdftex.def Info: images/LSC_skopt_evals.png used on input line 212.
+Package pdftex.def Info: images/LSC_skopt_evals.png used on input line 260.
 (pdftex.def)             Requested size: 521.11513pt x 521.11554pt.
- [5 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/LSC_skopt_objective.png>] [6 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/LSC_skopt_evals.png>] <images/LSTM_arch.png, id=101, 1306.8825pt x 951.555pt>
+ [6 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/LSC_skopt_objective.png>] [7 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/LSC_skopt_evals.png>] <images/LSTM_arch.png, id=126, 1306.8825pt x 951.555pt>
 File: images/LSTM_arch.png Graphic file (type png)
  <use images/LSTM_arch.png>
-Package pdftex.def Info: images/LSTM_arch.png used on input line 220.
-(pdftex.def)             Requested size: 342.14119pt x 249.11177pt.
- <images/loss-6.png, id=102, 508.47107pt x 353.60678pt>
+Package pdftex.def Info: images/LSTM_arch.png used on input line 274.
+(pdftex.def)             Requested size: 236.86758pt x 172.4631pt.
+ <images/loss-6.png, id=128, 508.47107pt x 353.60678pt>
 File: images/loss-6.png Graphic file (type png)
  <use images/loss-6.png>
-Package pdftex.def Info: images/loss-6.png used on input line 227.
-(pdftex.def)             Requested size: 394.782pt x 274.5442pt.
- [7 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/LSTM_arch.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/loss-6.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+Package pdftex.def Info: images/loss-6.png used on input line 285.
+(pdftex.def)             Requested size: 315.82881pt x 219.63321pt.
+ [8 </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/LSTM_arch.png> </Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/images/loss-6.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
  (/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 Package rerunfilecheck Info: File `finalreport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 22068 strings out of 493014
- 440416 string characters out of 6133351
- 603565 words of memory out of 5000000
- 25133 multiletter control sequences out of 15000+600000
+ 22098 strings out of 493014
+ 440729 string characters out of 6133351
+ 603553 words of memory out of 5000000
+ 25150 multiletter control sequences out of 15000+600000
  16999 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,8n,78p,494b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,11n,78p,494b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on /Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.pdf (7 pages, 3224794 bytes).
+Output written on /Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.pdf (8 pages, 3234145 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

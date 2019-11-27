@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1574806762 "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.tex" "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.pdf" "finalreport" 1574806770
-  "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.aux" 1574806770 1388 2f7b5f628e5c78da3541045f95244c85 ""
-  "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.tex" 1574806754 6895 e913f12c681551789c46fd5a64b05775 ""
+["pdflatex"] 1574837731 "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.tex" "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.pdf" "finalreport" 1574837740
+  "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.aux" 1574837739 4522 9f5578a24b0e6844254eb49cf27387a5 ""
+  "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.tex" 1574837723 11373 c946c1f71b914a68f217fc5b9c7b2a6c ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm" 1136768653 3584 21b378cca2e40816b0e6d74a4dc98f04 ""
@@ -203,9 +203,9 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1490860339 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1490860398 3873397 50936b75940aae539edfe57da8c8d615 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "finalreport.aux" 1574806770 1388 2f7b5f628e5c78da3541045f95244c85 ""
-  "finalreport.out" 1574806762 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "finalreport.tex" 1574806754 6895 e913f12c681551789c46fd5a64b05775 ""
+  "finalreport.aux" 1574837739 4522 9f5578a24b0e6844254eb49cf27387a5 ""
+  "finalreport.out" 1574837732 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "finalreport.tex" 1574837723 11373 c946c1f71b914a68f217fc5b9c7b2a6c ""
   "images/C_plot.png" 1574234238 199531 3fe531dfc13cbb98bee723d51340c132 ""
   "images/LSC_skopt_evals.png" 1574790073 997438 aa24134c734f0019261b19c29878e6cb ""
   "images/LSC_skopt_objective.png" 1574790063 745512 e36a7239936b821e25b8e382322082d8 ""
@@ -221,9 +221,9 @@
   "images/param_S.png" 1570532618 58400 b38093e2dca0baff5529a8da4616bbe7 ""
   "images/temp_plot.png" 1574236377 365443 4dfca0f5711aacdca97265eb8de8c043 ""
   (generated)
-  "finalreport.pdf"
   "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.log"
+  "finalreport.pdf"
   "finalreport.out"
-  "finalreport.aux"
-  "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.pdf"
   "finalreport.log"
+  "/Users/nagydaniel/Documents/ELTE/MSc/dslab2019/finalreport/finalreport.pdf"
+  "finalreport.aux"

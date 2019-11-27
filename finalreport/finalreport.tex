@@ -117,22 +117,32 @@ is the temperature of the soil at a depth of around 10cm. The temperature data i
 \end{figure}
 
 \section*{The LSCD model}
-
+The LSCD model is built upon the observation that the flowering time of plants is highly correlated with the concentration 
+of the Vernalization insensitive3 (VIN3) protein. The  VIN3 mRNA levels are slowly rising with increasing weeks of cold exposure
+but rapidly decrease in the warm. Equations \ref{eq:diffnu} and \ref{eq:diffV} describe the 
+dynamics of spliced and unspliced VIN3 mRNA concentration.
 \begin{equation}
     \frac{\mathrm d\nu}{\mathrm d t} = p_{\nu}(L, S, C, D) - s_{\nu}\nu
+    \label{eq:diffnu}
 \end{equation}
 \begin{equation}
     \frac{\mathrm dV}{\mathrm dt} = s_{\nu}\nu - d_VV
+    \label{eq:diffV}
 \end{equation}
+In the equations above, 
 $p_{\nu}(L, S, C, D)=L\cdot S\cdot C\cdot D$ is the productive transcription,
 $s_{\nu}$ is the splicing rate, and $d_V$ is the degradation rate of the spliced VIN3.
 
+According to the model, the VIN3 concentration is determined by 4 different intermediators
+called the Long-term, the Short-term, the Current and the Diurnal intermediator proteins.
+The concentration of these intermediators are described by equations \ref{eq:dLdt}-\ref{eq:Dt}.
 \begin{equation}
     \frac{\mathrm dL}{\mathrm dt} =
     \begin{cases}
     1-d_LL & T < T_L \\
     -d_LL & T \geq T_L
     \end{cases}
+    \label{eq:dLdt}
 \end{equation}
 
 \begin{equation}
@@ -142,6 +152,7 @@ $s_{\nu}$ is the splicing rate, and $d_V$ is the degradation rate of the spliced
     p_{c1}-p_{c2}\frac{T-T_{c1}}{T_{c2}-T_{c1}} & T_{c1} < T < T_{c2} \\
     p_{c2} & T \geq T_{c2}
     \end{cases}
+    \label{eq:CT}
 \end{equation}
 
 \begin{equation}
@@ -150,25 +161,29 @@ $s_{\nu}$ is the splicing rate, and $d_V$ is the degradation rate of the spliced
     1, & T < T_S \\
     S_1, & T \geq T_S
     \end{cases}
+    \label{eq:STm}
 \end{equation}
 
 \begin{equation}
     D(t) =  \left[p_D + \sin\left(2\pi\left(t - \frac{t_m-1}{24}\right)\right)\right]^2
+    \label{eq:Dt}
 \end{equation}
 $T_m$ is the maximum temperature since the last resetting, which was chosen to occur each day at 4pm.
 $t_m$ is the time at dawn.
-
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{./images/param_L.png}
-        \caption{$L$ intermediator for a }
+        \caption{Illustration of change of $L$ as a function of time and temperature.}
+        \label{fig:param_L}
     \end{minipage}
     \hfill
     \begin{minipage}{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{./images/param_S.png}
+        \caption{Illustration of change of $S$ as a function of time and temperature.}
+        \label{fig:param_S}
     \end{minipage}
 \end{figure}
 \begin{figure}[H]
@@ -176,56 +191,103 @@ $t_m$ is the time at dawn.
     \begin{minipage}{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{./images/param_C.png}
+        \caption{Illustration of change of $C$ as a function of time and temperature.}
+        \label{fig:param_C}
     \end{minipage}
     \hfill
     \begin{minipage}{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{./images/param_D.png}
+        \caption{Illustration of change of $D$ as a function of time and temperature.}
+        \label{fig:param_D}
     \end{minipage}
 \end{figure}
-
+Figures \ref{fig:param_L}-\ref{fig:param_D} show how the intermediator levels are changing with the temperature and time.
 \subsection*{Results with the LSCD model}
+I investigated the LSCD model for a single type of bulbous perennial for a 20-year dataset. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/L_plot.png}
+    \caption{$L$ intermediator for a one-year period temperature data across 20 years.}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/S_plot.png}
+    \caption{$S$ intermediator for a one-year period temperature data across 20 years.}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/C_plot.png}
+    \caption{$C$ intermediator for a one-year period temperature data across 20 years.}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/nu_plot.png}
+    \caption{Spliced VIN3 concentration for a one-year period temperature data across 20 years.}
 \end{figure}
+\subsection*{Gaussian process optimization}
+The hyperparamteres of the simpler LSC model were searched with Gaussian process optimization using the \texttt{scikit-optimize}
+python package. The results of the fit are shown on figures \ref{fig:LSC_skopt_evals} and \ref{fig:LSC_skopt_objective}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    param & dimension  & initial value & fitted value \\ \hline
+    $d_V$     & day$^{-1}$& 18 & 19.7069 \\ \hline
+    $s_{\nu}$ & day$^{-1}$& 79.2 & 70.655 \\ \hline
+    $S_1$     & 1 & 0.75 & 2.1732 \\ \hline
+    $T_L$     & $^{\circ}$C & 17 & 31.945 \\ \hline
+    $d_L$     & day$^{-1}$& 0.009 & 0.074249 \\ \hline
+    $T_{c1}$  & $^{\circ}$C & 8 & 10.1501 \\ \hline
+    $T_{c2}$  & $^{\circ}$C & 15.4 & 14.4630 \\ \hline
+    $p_{c1}$  & 1 & 0.0315 & 0.01038 \\ \hline
+    $p_{c2}$  & 1 & 0.03   & 0.0309 \\ \hline
+    $p_D$     & 1 & 2.05 & - \\ \hline
+    $T_S$     & $^{\circ}$C & 15 &17.164 \\ \hline
+    \end{tabular}
+    \caption{Values of the parameters in the literature and values after applying GP optimizer on the LSC model.}
+\end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.99\textwidth]{images/LSC_skopt_objective.png}
+    \caption{Results of objectives of the LSC model while fitting parameters with the GP optimizer.}
+    \label{fig:LSC_skopt_objective}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.99\textwidth]{images/LSC_skopt_evals.png}
+    \caption{Results of evaluations of the LSC model with the GP optimizer.}
+    \label{fig:LSC_skopt_evals}
 \end{figure}
 
 
 \newpage
 \section*{Neural network approach}
+A neural network was implemented aiming to predict the time until the next flowering date bassed on a sequence of temperature
+measurement data. The network was feeded with a dataset created by systematically resampling the existing temperature series and 
+labeling these sequances. The architecture is based on LSTM cells and was a single layer recursive neural network. 
+The schema of this architecture is seen on figure \ref{fig:LSTM_arch}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{images/LSTM_arch.png}
+    \includegraphics[width=0.45\textwidth]{images/LSTM_arch.png}
     \caption{LSTM architecture for predicting flowering time from temperature measurement series.}
+    \label{fig:LSTM_arch}
 \end{figure}
-
+The LSTM cells have cell state of 16 float values and also a hidden state of 16 floats. At the end there is a fully connected 
+layer equipped with ReLU activation to predict a single float value.
 \subsection*{Results of the neural network approach}
+The network was trained on a part of the available data with batch size 8. The model was trained for 300 epochs with
+Adam optimizer and the learning rate was set to 0.03. Figure \ref{fig:loss-6} show the loss during training.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{images/loss-6.png}
+    \includegraphics[width=0.6\textwidth]{images/loss-6.png}
+    \caption{Loss functions on training and validation datasets across 300 epochs.}
+    \label{fig:loss-6}
 \end{figure}
-
+Altough the model was converging, the mean squared error is still large, meaning that it is plenty of room for improvement.
+The fact that this simple model was converging even for a small subset of the data, without overfitting, gives hope that
+significant improvement could be achieved in the future.
 
 \end{document}
